@@ -1,0 +1,49 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_34-a92c58cbc2e0506d02ef8f66ebfe475a564a2c0a",
+  "solcVersion": "0.8.34",
+  "solcLongVersion": "0.8.34+commit.80d5c536",
+  "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.21.1"
+  },
+  "userSourceNameMap": {
+    "contracts/crypto-bank.sol": "project/contracts/crypto-bank.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "osaka",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/crypto-bank.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\ncontract CryptoBank {\n\tmapping(address => uint256) public balances;\n\n\tevent Deposit(address indexed user, uint256 amount);\n\tevent Withdraw(address indexed user, uint256 amount);\n\n\tfunction deposit() external payable {\n\t\trequire(msg.value > 0, \"Devi depositare qualcosa\");\n\t\tbalances[msg.sender] += msg.value;\n\t\temit Deposit(msg.sender, msg.value);\n\t}\n\n\tfunction withdraw(uint256 amount) external {\n\trequire(balances[msg.sender] >= amount, \"Saldo insufficiente\");\n\tbalances[msg.sender] -= amount;\n\t(bool success, ) = msg.sender.call{value: amount}(\"\");\n\trequire(success, \"Trasferimento fallito\");\n\temit Withdraw(msg.sender, amount);\n\t}\n\n\tfunction getBalance(address user) external view returns (uint256) {\n\t\treturn balances [user];\n\t}\n}\n"
+      }
+    }
+  }
+}
