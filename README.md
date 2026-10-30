@@ -1,3 +1,4 @@
+ HEAD
 # CryptoBank
 
 Un semplice smart contract bancario scritto in Solidity. Permette di depositare, prelevare e trasferire ETH.
@@ -20,3 +21,7 @@ Un semplice smart contract bancario scritto in Solidity. Permette di depositare,
 
 ```bash
 npm install
+
+# crypto-bank
+Simple decentralized bank smart contract (Solidity + Hardhat)
+dce085a7c2d057652137c6c55ae63cb0838698bb
