@@ -1,32 +1,23 @@
- HEAD
 # CryptoBank
 
-Un semplice smart contract bancario scritto in Solidity. Permette di depositare, prelevare e trasferire ETH.
+A simple decentralized bank smart contract deployed on Ethereum Sepolia testnet.
 
-## Funzionalità
+## Deployed Contract
 
-- **Deposit**: Deposita ETH nel contratto
-- **Withdraw**: Preleva ETH dal proprio saldo (protetto da reentrancy)
-- **Transfer**: Trasferisci ETH a un altro utente
-- **Eventi**: `Deposit`, `Withdraw`, `Transfer`
+**Address**: `0x466fB6BDc862F55ad11bb554e72eBe935Ac0d3bf`
 
-## Tecnologie
+### Verified Source Code
+- [Etherscan](https://sepolia.etherscan.io/address/0x466fB6BDc862F55ad11bb554e72eBe935Ac0d3bf#code)
+- [Blockscout](https://eth-sepolia.blockscout.com/address/0x466fB6BDc862F55ad11bb554e72eBe935Ac0d3bf#code)
+- [Sourcify](https://sourcify.dev/server/repo-ui/11155111/0x466fB6BDc862F55ad11bb554e72eBe935Ac0d3bf)
 
-- Solidity 0.8.24
-- Hardhat
-- OpenZeppelin Contracts (`Ownable`, `ReentrancyGuard`)
-- JavaScript
+## Features
+- Deposit ETH
+- Withdraw ETH
+- Check balance
 
-## Setup
+## Development
 
+### Install dependencies
 ```bash
 npm install
-
-# crypto-bank
-Simple decentralized bank smart contract (Solidity + Hardhat)
-
-## Deployed Contracts
-
-### Sepolia
-- **CryptoBank**: `0x466fB6BDc862F55ad11bb554e72eBe935Ac0d3bf`
-  - [View on Etherscan](https://sepolia.etherscan.io/address/0x466fB6BDc862F55ad11bb554e72eBe935Ac0d3bf)
